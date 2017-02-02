@@ -1,0 +1,20 @@
+
+"\C-p": history-search-backward
+"\C-n": history-search-forward
+"\e[A": previous-history
+"\e[B": next-history
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+"\C-b": backward-word
+
+"\C-w": forward-word
+"\C-l": kill-word
+"\C-h": backward-kill-word
+
+"\C-u": undo
+"\C-.": yank-last-arg
+
+$if Bash
+  Space: magic-space
+$endif

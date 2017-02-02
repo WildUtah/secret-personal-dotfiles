@@ -1,10 +1,12 @@
 
 export CLASSPATH=$CLASSPATH:.
-export PATH=/usr/local/bin:$PATH:/Users/brian/bin:/Users/brian/android-sdk-macosx/tools:/Users/brian/android-sdk-macosx/platform-tools
+export PATH=/usr/local/bin:$PATH:~/bin:~/android-sdk-macosx/tools:~/android-sdk-macosx/platform-tools
 
 export CLICOLOR=CLICOLOR
 #export GNUTERM='x11'
 HISTCONTROL=ignoredups:ignorespace
+export EDITOR=nvim
+export VISUAL=nvim
 
 export FIGNORE=.o:~:.class
 
@@ -16,12 +18,12 @@ alias gdb='/usr/local/bin/gdb'
 alias g++='g++ -std=c++1y '
 alias c++='c++ -std=c++1y '
 #set -o vi
-alias locate='mdfind -name'
-alias cat='lolcat '
 alias vi=nvim
 
 set HOMEBREW_NO_GITHUB_API
 
+if [-x "/usr/local/bin/lolcat"] && alias cat='lolcat '
+if [-x "/usr/bin/mdfind"] && alias locate='mdfind -name '
 
 function prom1 {
 local BLUE="\[\033[0;34m\]"
@@ -31,7 +33,7 @@ local CYAN="\[\033[0;36m\]"
 local LIGHT_RED="\[\033[1;31m\]"
 local WHITE="\[\033[1;37m\]"
 local NO_COLOUR="\[\033[0m\]"
-PS1="\[\033]0;\w\007$BLUE[$LIGHT_RED\$(/Users/brian/bin/promptpwd)$BLUE]$CYAN\$(date +%H%M)$WHITE> $NO_COLOUR"
+PS1="\[\033]0;\w\007$BLUE[$LIGHT_RED\$(~/bin/promptpwd)$BLUE]$CYAN\$(date +%H%M)$WHITE> $NO_COLOUR"
 }
 
 prom1
