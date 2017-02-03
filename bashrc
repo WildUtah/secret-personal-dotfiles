@@ -5,19 +5,29 @@ export PATH=/usr/local/bin:$PATH:~/bin:~/android-sdk-macosx/tools:~/android-sdk-
 export CLICOLOR=CLICOLOR
 #export GNUTERM='x11'
 HISTCONTROL=ignoredups:ignorespace
+
 export EDITOR=nvim
 export VISUAL=nvim
 
 export FIGNORE=.o:~:.class
 
-alias ll='ls -alp '
-alias l='ls -lp '
+#compatible with BSD (OS/X) and GNU (Linux)
+if ls --help 2>&1 | grep -q -- --color
+then
+    alias ls='ls --color=auto -F '
+    alias ll='ls --color=auto -alF '
+    alias l='ls --color=auto -lF '
+else
+    alias ls='ls -FG '
+    alias ll='ls -alFG '
+    alias l='ls -lFG '
+fi
+
 alias rm='rm -i '
 alias cgdb='cgdb -d /usr/local/bin/gdb '
-alias gdb='/usr/local/bin/gdb'
+alias gdb='/usr/local/bin/gdb '
 alias g++='g++ -std=c++1y '
 alias c++='c++ -std=c++1y '
-#set -o vi
 alias vi=nvim
 
 set HOMEBREW_NO_GITHUB_API
