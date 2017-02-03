@@ -3,6 +3,9 @@
 	satus = auto
 	branch = auto
 	status = auto
+[alias]
+  ass=add
+  st=status
 [user]
 	name = Brian
 	email = brian@utahbrian.com

@@ -36,6 +36,13 @@ if [ -x "/usr/local/bin/lolcat" ]; then alias cat='lolcat '; fi;
 if [ -x "/usr/bin/mdfind" ]; then alias locate='mdfind -name '; fi;
 
 function prom1 {
+  local prefix=`hostname`;
+  if [[ "utahbrian.com" == `hostname` ]] 
+  then
+    prefix = "ub.c";
+  elif [[ `hostname` =~ ".local" ]]
+    prefix = "";
+  fi
 local BLUE="\[\033[0;34m\]"
 #local RED="\[\033[38;5;124m"
 local RED="\[\033[0;31m\]"
@@ -43,7 +50,7 @@ local CYAN="\[\033[0;36m\]"
 local LIGHT_RED="\[\033[1;31m\]"
 local WHITE="\[\033[1;37m\]"
 local NO_COLOUR="\[\033[0m\]"
-PS1="\[\033]0;\w\007$BLUE[$LIGHT_RED\$(~/bin/promptpwd)$BLUE]$CYAN\$(date +%H%M)$WHITE> $NO_COLOUR"
+PS1="\[\033]0;\w\007${BLUE}${prefix}[$LIGHT_RED\$(~/bin/promptpwd)$BLUE]$CYAN\$(date +%H%M)$WHITE> $NO_COLOUR"
 }
 
 prom1
