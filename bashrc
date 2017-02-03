@@ -5,6 +5,7 @@ export PATH=/usr/local/bin:$PATH:~/bin:~/android-sdk-macosx/tools:~/android-sdk-
 export CLICOLOR=CLICOLOR
 #export GNUTERM='x11'
 HISTCONTROL=ignoredups:ignorespace
+export LESSHISTFILE=~/.config/lesshist
 
 export EDITOR=nvim
 export VISUAL=nvim
