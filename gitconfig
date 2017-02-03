@@ -1,0 +1,10 @@
+[color]
+	diff = auto
+	satus = auto
+	branch = auto
+	status = auto
+[user]
+	name = Brian
+	email = brian@utahbrian.com
+[core]
+	editor = nvim
