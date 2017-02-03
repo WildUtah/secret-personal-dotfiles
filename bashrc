@@ -14,14 +14,17 @@ export FIGNORE=.o:~:.class
 #compatible with BSD (OS/X) and GNU (Linux)
 if ls --help 2>&1 | grep -q -- --color
 then
-    alias ls='ls --color=auto -F '
-    alias ll='ls --color=auto -alF '
-    alias l='ls --color=auto -lF '
+    alias ls='ls --color=auto -hF '
+    alias ll='ls --color=auto -halF '
+    alias l='ls --color=auto -lhF '
 else
-    alias ls='ls -FG '
-    alias ll='ls -alFG '
-    alias l='ls -lFG '
+    alias ls='ls -hFG '
+    alias ll='ls -halFG '
+    alias l='ls -lhFG '
 fi
+alias grep='grep --color=auto '
+alias fgrep='fgrep --color=auto '
+alias egrep='egrep --color=auto '
 
 alias rm='rm -i '
 alias cgdb='cgdb -d /usr/local/bin/gdb '
