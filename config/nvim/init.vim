@@ -1,12 +1,9 @@
-"dein Scripts-----------------------------
 set runtimepath+=~/.config/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.config/dein')
   call dein#begin('~/.config/dein')
-  " Let dein manage dein
   call dein#add('~/.config/dein/repos/github.com/Shougo/dein.vim')
   " everything above this lines is Required
 
-  " Add or remove your plugins here:
   " You can specify revision/branch/tag.
 
   call dein#add("tpope/vim-fireplace")
@@ -33,24 +30,23 @@ if dein#load_state('~/.config/dein')
 endif
 if dein#check_install()
   call dein#install()
-endif " ^ If you want to install not installed plugins on startup.
-"End dein Scripts-------------------------
+endif 
+"End dein Scripts^^^
 
 set mouse=""
 set laststatus=2
-set nocp
 set visualbell
 set backupdir=~/tmp/
 set directory=~/tmp//
 set backup
+set bkc=auto
 set tabstop=2
 set shiftwidth=2
 set ruler
 set rulerformat=%25(%=\l\i\n\e\ %l\ \o\f\ %L%)
 set showcmd
 set et
-set comments=sr:/*,mb:*,ex:*/
-cnoreabbrev Q! q!
+cnorea Q! q!
 set updatetime=250
 
 "find files easily
@@ -59,7 +55,7 @@ set path+=**
 let mapleader = ","
 
 " grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
+nno <silent> <leader>f :Rgrep<CR>
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Dirs = '.git node_modules'
 
@@ -98,15 +94,14 @@ no  <Left> <C-w>h
 no  <Up> <C-w>k
 no  <Down> <C-w>j
 
-"clojure specific
-"in fact, vim-fireplace specific
+"vim-fireplace specific
 no <C-c><C-c> :Eval<cr>
 ino <C-c><C-c> <ESC>:Eval<cr>
 
 "git!
 no <silent> <C-a> :!git add %<cr>:GitGutterAll<cr>
 
-"Javascript specific
+"React specific
 let g:jsx_ext_required = 0
 
 "line positon preserve
