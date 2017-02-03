@@ -4,8 +4,11 @@
 
 
 extract all files to a .dot directory in home dir
+
 run ./setup
+
 compile promptpwd and put it in ~/bin/
+
 install dein for vim (from its home page)
 
 
