@@ -16,7 +16,8 @@ ln -fs ~/.dot/iterm2 ~/.iterm2
 
 if ![[ -x ~/bin/promptpwd ]]; 
 then 
-  gcc -o2 -o promptpwd promptpwd.c
+  mkdir -p ~/bin/
+  gcc -os -o promptpwd promptpwd.c
   strip -s promptpwd
   mv promptpwd ~/bin/promptpwd
 fi;
