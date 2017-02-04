@@ -36,7 +36,7 @@ alias vi=nvim
 
 set HOMEBREW_NO_GITHUB_API
 
-if [ -x "/usr/local/bin/lolcat" ]; then alias cat='lolcat '; fi;
+if [ -x "/usr/local/bin/lolcat" ]; then alias cat='lolcat -t '; fi;
 if [ -x "/usr/bin/mdfind" ]; then alias locate='mdfind -name '; fi;
 
 function prom1 {
