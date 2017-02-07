@@ -14,6 +14,17 @@ ln -fs ~/.dot/inputrc ~/.inputrc
 ln -fs ~/.dot/gitconfig ~/.gitconfig
 ln -fs ~/.dot/iterm2 ~/.iterm2
 
+#ssh
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+if ![[ -f ~/.ssh/authorized_keys ]] || 
+  ! fgrep -q "`cat ~/.dot/ssh/id_rsa.pub`" ~/.ssh/authorized_keys;
+then
+  cat ~/.dot/ssh/id_rsa.pub >> ~/.ssh/authorized_keys;
+fi
+chmod 600 ~/.ssh/authorized_keys 
+
+#prompt
 if ![[ -x ~/bin/promptpwd ]]; 
 then 
   mkdir -p ~/bin/
