@@ -11,7 +11,10 @@ mkdir -p ~/.config/nvim
 ln -fs ~/.dot/config/nvim/init.vim ~/.config/nvim/init.vim
 ln -fs ~/.dot/inputrc ~/.inputrc
 ln -fs ~/.dot/gitconfig ~/.gitconfig
-ln -Fhfs ~/.dot/iterm2 ~/.iterm2
+if ! [[ -L ~/.iterm2 ]]
+then
+  ln -fs ~/.dot/iterm2 ~/.iterm2
+fi;
 
 #ssh
 mkdir -p ~/.ssh
