@@ -5,7 +5,6 @@ then
   then
     . $(brew --prefix)/share/bash-completion/bash_completion
   fi
-
   $PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 fi
 
