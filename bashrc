@@ -66,7 +66,7 @@ function gnucolors {
   then
     export LESSOPEN="| $SRCHI %s"
     export LESS=" -R "
-    alias more="more -R "
+    alias more="less -XER "
     return 0
   else
     echo "Please install GNU source-highlight"
