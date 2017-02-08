@@ -33,6 +33,9 @@ alias gdb='/usr/local/bin/gdb '
 alias g++='g++ -std=c++1y '
 alias c++='c++ -std=c++1y '
 alias vi=nvim
+alias more="less -XER "
+
+export LESS=" -R "
 
 set HOMEBREW_NO_GITHUB_API
 
@@ -44,8 +47,6 @@ function lolcolors {
     # You need to remove -t automatically on non-truecolor terminals
     # https://www.youtube.com/watch?v=LPn0KFlbqX8
     export LESSOPEN="| `type -p lolcat` -ft %s "
-    export LESS=" -R "
-    alias more="more -R "
     return 0
   else
     echo "Please install lolcat with 'gem install lolcat'."
@@ -65,11 +66,9 @@ function gnucolors {
   if [ -x $SRCHI ]
   then
     export LESSOPEN="| $SRCHI %s"
-    export LESS=" -R "
-    alias more="less -XER "
     return 0
   else
-    echo "Please install GNU source-highlight"
+    echo "Please install GNU source-highlight."
     return -1
   fi;
 }
