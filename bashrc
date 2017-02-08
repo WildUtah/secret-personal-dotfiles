@@ -38,33 +38,43 @@ set HOMEBREW_NO_GITHUB_API
 
 function lolcolors {
   #remember to gem install lolcat
-  if [ -x "/usr/local/bin/lolcat" ]; 
+  if type -p lolcat > /dev/null;
   then 
     alias cat='lolcat -t '; 
     # You need to remove -t automatically on non-truecolor terminals
     # https://www.youtube.com/watch?v=LPn0KFlbqX8
-    export LESSOPEN="| /usr/local/bin/lolcat -ft %s "
+    export LESSOPEN="| `type -p lolcat` -ft %s "
     export LESS=" -R "
     alias more="more -R "
+    return 0
   else
-    echo "Please install lolcat"
+    echo "Please install lolcat with 'gem install lolcat'."
+    return -1
   fi;
 }
-
-lolcolors
 
 #alternate source of color
 function gnucolors {
   #remember to brew install source-highlight
-  if [ -x "/usr/local/bin/src-hilite-lesspipe.sh" ]
+  local SRCHI="/usr/local/bin/src-hilite-lesspipe.sh";
+  if ! [ -x $SRCHI ]
   then
-    export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+    SRCHI="/usr/share/source-highlight/src-hilite-lesspipe.sh"
+  fi;
+
+  if [ -x $SRCHI ]
+  then
+    export LESSOPEN="| $SRCHI %s"
     export LESS=" -R "
     alias more="more -R "
+    return 0
   else
     echo "Please install GNU source-highlight"
+    return -1
   fi;
 }
+
+lolcolors || gnucolors
 
 #OS/X slocate
 if [ -x "/usr/bin/mdfind" ]; then alias locate='mdfind -name '; fi;
