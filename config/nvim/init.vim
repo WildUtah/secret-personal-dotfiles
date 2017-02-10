@@ -36,8 +36,8 @@ endif
 set mouse=""
 set laststatus=2
 set visualbell
-set backupdir=~/tmp/
-set directory=~/tmp//
+set backupdir=~/.local/tmp/
+set directory=~/.local/tmp//
 set backup
 set bkc=auto
 set tabstop=2

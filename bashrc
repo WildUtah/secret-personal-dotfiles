@@ -4,8 +4,12 @@ export PATH=/usr/local/bin:$PATH:~/bin:~/android-sdk-macosx/tools:~/android-sdk-
 
 export CLICOLOR=CLICOLOR
 #export GNUTERM='x11'
-HISTCONTROL=ignoredups:ignorespace
-export LESSHISTFILE=~/.config/lesshist
+HISTCONTROL=ignoredups:ignorespace:erasedups
+HISTFILE=~/.local/.bash_history
+shopt -s histappend
+HISTSIZE=5000
+
+export LESSHISTFILE=~/.local/lesshist
 
 export EDITOR=nvim
 export VISUAL=nvim
