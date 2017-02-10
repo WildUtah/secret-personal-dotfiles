@@ -82,12 +82,16 @@ nnoremap // :noh<CR>
 "maybe change to ^/$?
 no h ^
 no l $
+"no <Space> find a way not to rely on crutch of space
 
 "if we're using omnicoplete, please don't clutter
 "autocmd CursorMovedI * if pumvisible() == 0|pclose|endif "maybe this too
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 no <tab> %
+no % va(
+vno <tab> <Esc>
+vno <Esc> <nop>
 
 no  <Right> <C-w>l
 no  <Left> <C-w>h
