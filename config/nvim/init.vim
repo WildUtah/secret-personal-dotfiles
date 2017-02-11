@@ -102,9 +102,16 @@ no  <Down> <C-w>j
 no <C-c><C-c> :Eval<cr>
 ino <C-c><C-c> <ESC>:Eval<cr>
 
-"experimental in clojure (maybe C-x c-i is better?
-autocmd FileType clojure,scheme,lisp :ino <buffer> <tab> <C-x><C-o>
-autocmd FileType clojure,scheme,lisp :ino <buffer> <S-tab> <tab>
+"experimental in clojure (maybe C-x c-o is better?)
+function! s:lisp_good_mappings() abort
+  ino <buffer> <tab> <C-x><C-i>
+  ino <buffer> <S-tab> <tab>
+  no <buffer> w W
+  no <buffer> e E
+  no <buffer> ge gE
+  no <buffer> b B
+endfunction
+autocmd FileType clojure,lisp,scheme call s:lisp_good_mappings()
 
 "git!
 no <silent> <C-a> :!git add %<cr>:GitGutterAll<cr>
