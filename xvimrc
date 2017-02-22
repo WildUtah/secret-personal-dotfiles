@@ -1,0 +1,65 @@
+set mouse=""
+set laststatus=2
+set visualbell
+set backupdir=~/.local/tmp/
+set directory=~/.local/tmp//
+set backup
+set bkc=auto
+set tabstop=2
+set shiftwidth=2
+set ruler
+set rulerformat=%25(%=\l\i\n\e\ %l\ \o\f\ %L%)
+set showcmd
+set et
+cnorea Q! q!
+cnorea Wq wq
+cnorea WQ wq
+set updatetime=250
+
+"find files easily
+set path+=**
+
+let mapleader = ","
+
+"totally essential! don't use <esc>!
+"type kj in insert mode for normal mode
+ino kj <ESC>
+nno ;; :w<CR>
+ino <Esc> <Del>
+"highlight Pmenu ctermfg=0 ctermbg=10
+
+" For Japanese keyboards…
+ino ／ /
+
+"make op mode work better with parens
+ono i9 i(
+ono a9 a(
+"search works better like this
+set hlsearch
+set incsearch
+nnoremap // :noh<CR>
+"maybe change to ^/$?
+no h ^
+no l $
+"no <Space> find a way not to rely on crutch of space
+
+no <tab> %
+no % va(
+vno <tab> <Esc>
+vno <Esc> <nop>
+
+no  <Right> <C-w>l
+no  <Left> <C-w>h
+no  <Up> <C-w>k
+no  <Down> <C-w>j
+
+ino <buffer> <tab> <C-x><C-i>
+ino <buffer> <S-tab> <tab>
+
+set background=dark
+filetype plugin indent on
+syntax enable
+colorscheme solarized
+
+set cindent
+set cino={1s,j1

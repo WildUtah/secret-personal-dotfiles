@@ -9,6 +9,7 @@ mkdir -p ~/.lein
 ln -fs ~/.dot/lein/profiles.clj ~/.lein/profiles.clj
 mkdir -p ~/.config/nvim
 ln -fs ~/.dot/config/nvim/init.vim ~/.config/nvim/init.vim
+ln -fs ~/.dot/xvimrc ~/.xvimrc
 ln -fs ~/.dot/inputrc ~/.inputrc
 ln -fs ~/.dot/gitconfig ~/.gitconfig
 if ! [[ -L ~/.iterm2 ]]

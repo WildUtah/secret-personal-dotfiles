@@ -47,7 +47,14 @@ set rulerformat=%25(%=\l\i\n\e\ %l\ \o\f\ %L%)
 set showcmd
 set et
 cnorea Q! q!
+cnorea Wq wq
+cnorea WQ wq
 set updatetime=250
+set undofile
+set ignorecase
+set smartcase
+set ignorecase
+set smartcase
 
 "find files easily
 set path+=**
@@ -98,18 +105,22 @@ no  <Left> <C-w>h
 no  <Up> <C-w>k
 no  <Down> <C-w>j
 
-"vim-fireplace specific
-no <C-c><C-c> :Eval<cr>
-ino <C-c><C-c> <ESC>:Eval<cr>
+ino <buffer> <tab> <C-x><C-i>
+ino <buffer> <S-tab> <tab>
 
 "experimental in clojure (maybe C-x c-o is better?)
 function! s:lisp_good_mappings() abort
-  ino <buffer> <tab> <C-x><C-i>
-  ino <buffer> <S-tab> <tab>
+  "vim-fireplace specific
+  no <C-c><C-c> :Eval<cr>
+  ino <C-c><C-c> <ESC>:Eval<cr>
   no <buffer> w W
   no <buffer> e E
   no <buffer> ge gE
   no <buffer> b B
+  map >0 >)
+  map <0 <)
+  map >9 <(
+  map >9 >(
 endfunction
 autocmd FileType clojure,lisp,scheme call s:lisp_good_mappings()
 
