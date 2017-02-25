@@ -113,7 +113,7 @@ ino <buffer> <S-tab> <tab>
 function! s:lisp_good_mappings() abort
   "vim-fireplace specific
   no <C-c><C-c> :Eval<cr>
-  ino <C-c><C-c> <ESC>:Eval<cr>
+  ino <C-c><C-c> <C-o>:Eval<cr>
   no <buffer> w W
   " no <buffer> e E
   " no <buffer> ge gE
