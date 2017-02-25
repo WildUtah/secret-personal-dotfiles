@@ -120,8 +120,12 @@ function! s:lisp_good_mappings() abort
   no <buffer> b B
   map >0 >)
   map <0 <)
-  map >9 <(
+  map <9 <(
   map >9 >(
+  no <C-j> :let g:parinfer_mode = "indent"<CR>
+  ino <C-j> <C-o>:let g:parinfer_mode = "indent"<CR>
+  no <C-p> :let g:parinfer_mode = "paren"<CR>
+  ino <C-p> <C-o>:let g:parinfer_mode = "paren"<CR>
 endfunction
 autocmd FileType clojure,lisp,scheme call s:lisp_good_mappings()
 
