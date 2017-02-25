@@ -96,6 +96,7 @@ no l $
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 no <tab> %
+vno <tab> %
 no % va(
 vno <tab> <Esc>
 vno <Esc> <nop>
@@ -114,8 +115,8 @@ function! s:lisp_good_mappings() abort
   no <C-c><C-c> :Eval<cr>
   ino <C-c><C-c> <ESC>:Eval<cr>
   no <buffer> w W
-  no <buffer> e E
-  no <buffer> ge gE
+  " no <buffer> e E
+  " no <buffer> ge gE
   no <buffer> b B
   map >0 >)
   map <0 <)
