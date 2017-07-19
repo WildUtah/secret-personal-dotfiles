@@ -1,4 +1,5 @@
-{:user {:plugins [[cider/cider-nrepl "0.14.0"]]
+{:user {:plugins [[mvxcvi/whidbey "1.3.1"]
+                  [cider/cider-nrepl "0.14.0"]]
         :repl-options
         {:init (require '[clojure.stacktrace :refer [e]])
          :prompt

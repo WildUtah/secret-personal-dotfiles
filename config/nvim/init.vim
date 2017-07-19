@@ -18,10 +18,13 @@ if dein#load_state('~/.config/dein')
   call dein#add('tpope/vim-commentary')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('vim-scripts/grep.vim')
-  call dein#add('vim-scripts/paredit.vim')
+  " call dein#add('vim-scripts/paredit.vim')
   call dein#add('guns/vim-sexp')
   call dein#add('tpope/vim-sexp-mappings-for-regular-people')
+  call dein#add('tpope/vim-repeat')
   let g:sexp_enable_insert_mode_mappings = 0
+
+  call dein#add('gabrielsimoes/cfparser.vim')
 
 
   call dein#add('WildUtah/nvim-setup-for-clojure')
@@ -60,6 +63,7 @@ set smartcase
 set path+=**
 
 let mapleader = ","
+let maplocalleader = ","
 
 " grep.vim
 nno <silent> <leader>f :Rgrep<CR>
@@ -68,6 +72,9 @@ let Grep_Skip_Dirs = '.git node_modules'
 
 "disable indentline, until you need it
 let g:indentLine_enabled=0
+
+"set cookie file for curl downloads in cfparser
+let g:cf_cookies_file='~/local/cf_cookies'
 
 "totally essential! don't use <esc>!
 "type kj in insert mode for normal mode
@@ -98,8 +105,6 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 no <tab> %
 vno <tab> %
 no % va(
-vno <tab> <Esc>
-vno <Esc> <nop>
 
 no  <Right> <C-w>l
 no  <Left> <C-w>h
@@ -109,7 +114,6 @@ no  <Down> <C-w>j
 ino <buffer> <tab> <C-x><C-i>
 ino <buffer> <S-tab> <tab>
 
-"experimental in clojure (maybe C-x c-o is better?)
 function! s:lisp_good_mappings() abort
   "vim-fireplace specific
   no <C-c><C-c> :Eval<cr>
