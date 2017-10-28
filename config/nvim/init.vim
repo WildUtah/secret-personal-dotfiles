@@ -109,7 +109,9 @@ no % va(
 no  <Right> <C-w>l
 no  <Left> <C-w>h
 no  <Up> <C-w>k
+ino <Up> <Esc><C-w>k
 no  <Down> <C-w>j
+ino <Down> <Esc><C-w>j
 
 ino <buffer> <tab> <C-x><C-i>
 ino <buffer> <S-tab> <tab>
