@@ -56,8 +56,6 @@ set updatetime=250
 set undofile
 set ignorecase
 set smartcase
-set ignorecase
-set smartcase
 
 "find files easily
 set path+=**
