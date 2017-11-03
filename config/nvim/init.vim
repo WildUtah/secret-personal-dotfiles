@@ -26,6 +26,7 @@ if dein#load_state('~/.config/dein')
 
   call dein#add('gabrielsimoes/cfparser.vim')
 
+  call dein#add('ctrlpvim/ctrlp.vim')
 
   call dein#add('WildUtah/nvim-setup-for-clojure')
   call dein#end() " Required from here down also
@@ -78,6 +79,7 @@ let g:cf_cookies_file='~/local/cf_cookies'
 "type kj in insert mode for normal mode
 ino kj <ESC>
 nno ;; :w<CR>
+nno <silent> <leader>r :%g-^ \+cerr-s=^\( \+\)\(c.\+\)$=\1/* \2 */<CR>:noh<CR>''
 ino <Esc> <Del>
 "highlight Pmenu ctermfg=0 ctermbg=10
 
