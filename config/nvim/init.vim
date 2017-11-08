@@ -55,8 +55,6 @@ cnorea Wq wq
 cnorea WQ wq
 set updatetime=250
 set undofile
-set ignorecase
-set smartcase
 
 "find files easily
 set path+=**
@@ -72,16 +70,21 @@ let Grep_Skip_Dirs = '.git node_modules'
 "disable indentline, until you need it
 let g:indentLine_enabled=0
 
-"set cookie file for curl downloads in cfparser
-let g:cf_cookies_file='~/local/cf_cookies'
 
 "totally essential! don't use <esc>!
 "type kj in insert mode for normal mode
 ino kj <ESC>
 nno ;; :w<CR>
-nno <silent> <leader>r :%g-^ \+cerr-s=^\( \+\)\(c.\+\)$=\1/* \2 */<CR>:noh<CR>''
 ino <Esc> <Del>
 "highlight Pmenu ctermfg=0 ctermbg=10
+
+function! s:contest_mappings() abort
+  "mark all C++ cerr lines as comments, for contest submissions
+  nno <silent> <leader>r :%g-^ \+cerr-s=^\( \+\)\(c.\+\)$=\1/* \2 */<CR>:noh<CR>''
+  "set cookie file for curl downloads in cfparser
+  let g:cf_cookies_file='~/.local/cf_cookies'
+endfunction
+autocmd FileType cpp,c++,cxx call s:contest_mappings()
 
 " For Japanese keyboards…
 ino ／ /
@@ -89,10 +92,14 @@ ino ／ /
 "make op mode work better with parens
 ono i9 i(
 ono a9 a(
+
 "search works better like this
 set hlsearch
 set incsearch
 nnoremap // :noh<CR>
+set ignorecase
+set smartcase
+
 "maybe change to ^/$?
 no h ^
 no l $
@@ -102,19 +109,22 @@ no l $
 "autocmd CursorMovedI * if pumvisible() == 0|pclose|endif "maybe this too
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+"use tab to bounce parens in normal mode
 no <tab> %
 vno <tab> %
 no % va(
 
+"use tab to autocomplete in insert mode
+ino <buffer> <tab> <C-x><C-i>
+ino <buffer> <S-tab> <tab>
+
+"no arrow keys
 no  <Right> <C-w>l
 no  <Left> <C-w>h
 no  <Up> <C-w>k
 ino <Up> <Esc><C-w>k
 no  <Down> <C-w>j
 ino <Down> <Esc><C-w>j
-
-ino <buffer> <tab> <C-x><C-i>
-ino <buffer> <S-tab> <tab>
 
 function! s:lisp_good_mappings() abort
   "vim-fireplace specific
