@@ -61,7 +61,11 @@ function lolcolors {
 #alternate source of color
 function gnucolors {
   #remember to brew install source-highlight
-  local SRCHI="/usr/local/bin/src-hilite-lesspipe.sh";
+  local SRCHI="/usr/local/bin/source-highlight-esc.sh";
+  if ! [ -x $SRCHI ]
+  then
+    SRCHI="/usr/share/source-highlight/source-highlight-esc.sh"
+  fi;
   if ! [ -x $SRCHI ]
   then
     SRCHI="/usr/share/source-highlight/src-hilite-lesspipe.sh"
@@ -69,7 +73,7 @@ function gnucolors {
 
   if [ -x $SRCHI ]
   then
-    export LESSOPEN="| $SRCHI %s"
+    export LESSOPEN="| $SRCHI %s --failsafe "
     return 0
   else
     echo "Please install GNU source-highlight."
@@ -77,7 +81,7 @@ function gnucolors {
   fi;
 }
 
-lolcolors || gnucolors
+gnucolors || lolcolors
 
 #OS/X slocate
 if [ -x "/usr/bin/mdfind" ]; then alias locate='mdfind -name '; fi;
