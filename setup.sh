@@ -13,7 +13,8 @@ mkdir -p ~/.config/karabiner
 ln -fs ~/.dot/config/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ln -fs ~/.dot/xvimrc ~/.xvimrc
 ln -fs ~/.dot/inputrc ~/.inputrc
-ln -fs ~/.dot/gitconfig ~/.gitconfig
+mkdir -p ~/.config/git
+ln -fs ~/.dot/gitconfig ~/.config/git/config
 if ! [[ -L ~/.iterm2 ]]
 then
   ln -fs ~/.dot/iterm2 ~/.iterm2
