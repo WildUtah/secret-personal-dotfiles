@@ -10,7 +10,7 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_alone_timeout_milliseconds": 200,
                     "basic.to_if_held_down_threshold_milliseconds": 500
                 },
                 "rules": [
@@ -20,8 +20,10 @@
                             {
                                 "from": {
                                     "key_code": "left_arrow",
-                                    "modifiers": {"mandatory":
-                                      [ "control" ]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -34,13 +36,52 @@
                             {
                                 "from": {
                                     "key_code": "right_arrow",
-                                    "modifiers": {"mandatory":
-                                      [ "control" ]
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "end"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Don't use fake brace keys: only command.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket"
                                     }
                                 ],
                                 "type": "basic"
@@ -233,33 +274,6 @@
                         ]
                     },
                     {
-                        "description": "Better Shifting: End parenthesis on shift + space",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "0",
-                                        "modifiers": [
-                                            "right_shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "spacebar"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Quit application by pressing command-q twice",
                         "manipulators": [
                             {
@@ -340,7 +354,7 @@
                         "key_code": "f1"
                     },
                     "to": {
-                        "consumer_key_code": "display_brightness_decrement"
+                        "key_code": "vk_none"
                     }
                 },
                 {
@@ -364,7 +378,7 @@
                         "key_code": "f4"
                     },
                     "to": {
-                        "key_code": "launchpad"
+                        "key_code": "vk_none"
                     }
                 },
                 {
@@ -372,7 +386,7 @@
                         "key_code": "f5"
                     },
                     "to": {
-                        "key_code": "illumination_decrement"
+                        "key_code": "vk_none"
                     }
                 },
                 {
@@ -380,7 +394,7 @@
                         "key_code": "f6"
                     },
                     "to": {
-                        "key_code": "illumination_increment"
+                        "key_code": "vk_none"
                     }
                 },
                 {
@@ -388,7 +402,7 @@
                         "key_code": "f7"
                     },
                     "to": {
-                        "consumer_key_code": "rewind"
+                        "key_code": "vk_none"
                     }
                 },
                 {
@@ -396,7 +410,7 @@
                         "key_code": "f8"
                     },
                     "to": {
-                        "consumer_key_code": "play_or_pause"
+                        "key_code": "vk_none"
                     }
                 },
                 {
@@ -404,7 +418,7 @@
                         "key_code": "f9"
                     },
                     "to": {
-                        "consumer_key_code": "fastforward"
+                        "key_code": "vk_none"
                     }
                 },
                 {
