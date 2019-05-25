@@ -37,10 +37,10 @@ if dein#check_install()
 endif 
 "End dein Scripts^^^
 
-set mouse=""
 set laststatus=2
 set visualbell
 set backupdir=~/.local/tmp/
+set undodir=~/.local/tmp/
 set directory=~/.local/tmp//
 set backup
 set bkc=auto
@@ -54,7 +54,6 @@ cnorea Q! q!
 cnorea Wq wq
 cnorea WQ wq
 set updatetime=250
-set undofile
 
 "find files easily
 set path+=**
