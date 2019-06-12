@@ -37,6 +37,8 @@ if dein#check_install()
 endif 
 "End dein Scripts^^^
 
+set modelines=0
+
 set laststatus=2
 set visualbell
 set backupdir=~/.local/tmp/
