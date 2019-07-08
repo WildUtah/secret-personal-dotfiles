@@ -34,7 +34,7 @@ alias egrep='egrep --color=auto '
 alias rm='rm -i '
 alias cgdb='cgdb -d /usr/local/bin/gdb '
 alias gdb='/usr/local/bin/gdb '
-alias g++='g++-8 -std=c++1y '
+alias g++='g++-9 -std=c++1y '
 alias c++='c++ -std=c++1y '
 alias vi=nvim
 alias more="less -XER "
