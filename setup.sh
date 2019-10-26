@@ -15,10 +15,6 @@ ln -fs ~/.dot/xvimrc ~/.xvimrc
 ln -fs ~/.dot/inputrc ~/.inputrc
 mkdir -p ~/.config/git
 ln -fs ~/.dot/gitconfig ~/.config/git/config
-if ! [[ -L ~/.iterm2 ]]
-then
-  ln -fs ~/.dot/iterm2 ~/.iterm2
-fi;
 
 #ssh
 mkdir -p ~/.ssh
