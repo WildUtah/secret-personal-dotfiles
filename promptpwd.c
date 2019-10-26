@@ -31,7 +31,7 @@ int main(int argc, char ** argv)
     if(depth==seen)
       {
       if((i>0) && ('~' != buffer[i-1]))
-        fputs("...", stdout);
+        fputs("…", stdout);
       else
         i--;
       break;
