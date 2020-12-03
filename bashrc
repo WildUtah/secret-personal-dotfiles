@@ -16,16 +16,26 @@ export VISUAL=nvim
 
 export FIGNORE=.o:~:.class
 
-#compatible with BSD (OS/X) and GNU (Linux)
-if ls --help 2>&1 | grep -q -- --color
+#compatible with BSD (OS/X) and GNU (Linux) and now use exa
+if [ -x "$(which exa)" ]
 then
+  alias ls='exa '
+  alias ll='exa -laF '
+  alias l='exa -lF '
+
+else
+
+  if ls --help 2>&1 | grep -q -- --color
+  then
     alias ls='ls --color=auto -hF '
     alias ll='ls --color=auto -halF '
     alias l='ls --color=auto -lhF '
-else
+  else
     alias ls='ls -hFG '
     alias ll='ls -halFG '
     alias l='ls -lhFG '
+  fi
+
 fi
 alias grep='grep --color=auto '
 alias fgrep='fgrep --color=auto '
@@ -34,7 +44,7 @@ alias egrep='egrep --color=auto '
 alias rm='rm -i '
 alias cgdb='cgdb -d /usr/local/bin/gdb '
 alias gdb='/usr/local/bin/gdb '
-alias g++='g++-9 -std=c++1y '
+alias g++='g++-10 -std=c++1y '
 alias c++='c++ -std=c++1y '
 alias vi=nvim
 alias more="less -XER "
