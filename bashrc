@@ -100,7 +100,7 @@ function prom1 {
   local PREFIX=`hostname`;
   if [[ "utahbrian.com" == `hostname` ]]; then
     PREFIX="ub.c";
-  elif [[ `hostname` =~ ".local" ]]; then
+  elif [[ `hostname` =~ "comcast.net" ]] || [[ `hostname` =~ ".local" ]]; then
     PREFIX="";
   fi
   local BLUE="\[\033[0;34m\]"
