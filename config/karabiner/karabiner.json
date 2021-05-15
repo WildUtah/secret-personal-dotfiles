@@ -27,6 +27,7 @@
                                         "key_code": "left_command"
                                     }
                                 ],
+                                
                                 "to_if_alone": [
                                     {
                                         "key_code": "open_bracket",
@@ -34,7 +35,9 @@
                                             "left_shift"
                                         ]
 
-                                    },
+                                    }
+                                ],
+                                "to_after_key_up": [
                                     {
                                       "set_variable": {
                                         "name":"mouse_keys_full",
