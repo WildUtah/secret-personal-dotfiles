@@ -33,6 +33,13 @@
                                         "modifiers": [
                                             "left_shift"
                                         ]
+
+                                    },
+                                    {
+                                      "set_variable": {
+                                        "name":"mouse_keys_full",
+                                        "value": 0
+                                      }
                                     }
                                 ],
                                 "type": "basic"
@@ -1346,14 +1353,6 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "down_arrow"
-                    },
-                    "to": {
-                        "key_code": "vk_none"
-                    }
-                },
-                {
-                    "from": {
                         "key_code": "home"
                     },
                     "to": {
@@ -1362,10 +1361,10 @@
                 },
                 {
                     "from": {
-                        "key_code": "left_arrow"
+                        "key_code": "left_control"
                     },
                     "to": {
-                        "key_code": "vk_none"
+                        "key_code": "right_control"
                     }
                 },
                 {
@@ -1382,30 +1381,6 @@
                     },
                     "to": {
                         "consumer_key_code": "volume_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "right_arrow"
-                    },
-                    "to": {
-                        "key_code": "vk_none"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "up_arrow"
-                    },
-                    "to": {
-                        "key_code": "right_shift"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "left_control"
-                    },
-                    "to": {
-                        "key_code": "right_control"
                     }
                 }
             ],
