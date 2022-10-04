@@ -16,27 +16,19 @@ export VISUAL=nvim
 
 export FIGNORE=.o:~:.class
 
-#compatible with BSD (OS/X) and GNU (Linux) and now use exa
-if [ -x "$(which exa)" ]
+alias k='exa -laF --git --color-scale'
+
+if ls --help 2>&1 | grep -q -- --color
 then
-  alias ls='exa '
-  alias ll='exa -laF '
-  alias l='exa -lF '
-
+  alias ls='ls --color=auto -hF '
+  alias ll='ls --color=auto -halF '
+  alias l='ls --color=auto -lhF '
 else
-
-  if ls --help 2>&1 | grep -q -- --color
-  then
-    alias ls='ls --color=auto -hF '
-    alias ll='ls --color=auto -halF '
-    alias l='ls --color=auto -lhF '
-  else
-    alias ls='ls -hFG '
-    alias ll='ls -halFG '
-    alias l='ls -lhFG '
-  fi
-
+  alias ls='ls -hFG '
+  alias ll='ls -halFG '
+  alias l='ls -lhFG '
 fi
+
 alias grep='grep --color=auto '
 alias fgrep='fgrep --color=auto '
 alias egrep='egrep --color=auto '
