@@ -16,17 +16,17 @@ export VISUAL=nvim
 
 export FIGNORE=.o:~:.class
 
-alias k='exa -laF --git --color-scale'
+alias k='exa -laF --git --color-scale '
 
 if ls --help 2>&1 | grep -q -- --color
 then
   alias ls='ls --color=auto -hF '
-  alias ll='ls --color=auto -halF '
-  alias l='ls --color=auto -lhF '
+  # alias ll='ls --color=auto -halF '
+  # alias l='ls --color=auto -lhF '
 else
   alias ls='ls -hFG '
-  alias ll='ls -halFG '
-  alias l='ls -lhFG '
+  # alias ll='ls -halFG '
+  # alias l='ls -lhFG '
 fi
 
 alias grep='grep --color=auto '
@@ -36,7 +36,7 @@ alias egrep='egrep --color=auto '
 alias rm='rm -i '
 alias cgdb='cgdb -d /usr/local/bin/gdb '
 alias gdb='/usr/local/bin/gdb '
-alias g++='g++-10 -std=c++20 '
+alias g++='g++-12 -std=c++20 '
 alias c++='c++ -std=c++20 '
 alias vi=nvim
 alias more="less -XER "
