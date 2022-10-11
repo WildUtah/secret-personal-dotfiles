@@ -52,6 +52,7 @@ set ruler
 set rulerformat=%25(%=\l\i\n\e\ %l\ \o\f\ %L%)
 set showcmd
 set et
+set mouse=
 cnorea Q! q!
 cnorea Wq wq
 cnorea WQ wq
