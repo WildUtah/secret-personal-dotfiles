@@ -2,6 +2,8 @@
 export CLASSPATH=$CLASSPATH:.
 export PATH=/usr/local/bin:$PATH:~/bin:~/android-sdk-macosx/tools:~/android-sdk-macosx/platform-tools
 
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 export CLICOLOR=CLICOLOR
 #export GNUTERM='x11'
 HISTCONTROL=ignoredups:ignorespace:erasedups
@@ -33,7 +35,7 @@ alias grep='grep --color=auto '
 alias fgrep='fgrep --color=auto '
 alias egrep='egrep --color=auto '
 
-alias rm='rm -i '
+alias rm='echo "Don t use rm " '
 alias cgdb='cgdb -d /usr/local/bin/gdb '
 alias gdb='/usr/local/bin/gdb '
 alias g++='g++-12 -std=c++20 '
