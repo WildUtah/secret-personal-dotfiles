@@ -1,6 +1,6 @@
 
-export CLASSPATH=$CLASSPATH:.
-export PATH=/usr/local/bin:$PATH:~/bin:~/android-sdk-macosx/tools:~/android-sdk-macosx/platform-tools
+#export CLASSPATH=$CLASSPATH:.
+export PATH=/usr/local/bin:~/bin:/usr/local/opt/openjdk/bin:$PATH
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
@@ -19,6 +19,7 @@ export VISUAL=nvim
 export FIGNORE=.o:~:.class
 
 alias k='exa -laF --git --color-scale '
+alias mpv='mpv --no-ontop '
 
 if ls --help 2>&1 | grep -q -- --color
 then
