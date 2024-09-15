@@ -10,6 +10,7 @@ HISTCONTROL=ignoredups:ignorespace:erasedups
 HISTFILE=~/.local/.bash_history
 shopt -s histappend
 HISTSIZE=5000
+IGNOREEOF=6
 
 export LESSHISTFILE=~/.local/lesshist
 
