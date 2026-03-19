@@ -19,7 +19,8 @@ export VISUAL=nvim
 
 export FIGNORE=.o:~:.class
 
-alias k='exa -laF --git --color-scale '
+alias k='eza -laF --git --color-scale '
+alias grip='grep -i '
 alias mpv='mpv --no-ontop '
 
 if ls --help 2>&1 | grep -q -- --color
