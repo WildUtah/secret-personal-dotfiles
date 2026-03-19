@@ -1,4 +1,4 @@
-set runtimepath+=~/.config/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.config/dein')
   call dein#begin('~/.config/dein')
   call dein#add('~/.config/dein/repos/github.com/Shougo/dein.vim')
